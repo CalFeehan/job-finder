@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" 
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+
+<body class="logged-in-dashboard">
+    <div class="nav-bar">
+         <div class="logo">
+            <img class="logo" src="{{ url_for('static', filename='assets/Logo.png')}}" alt="">
+        </div>
+
+        <ul class="nav-list">
+            <li> <a href="{{ url_for('views.dashboard') }}"> <img class="btn" src="{{ url_for('static', filename='assets/Icon-home.png') }}" alt=""> </a> </li>
+            <li> <a href="{{ url_for('views.profile') }}"> <img class="btn" src="{{ url_for('static', filename='assets/Icon-profile-white.png') }}" alt=""> </a> </li>
+            <li> <a href="{{ url_for('views.contact') }}"> <img class="btn" src="{{ url_for('static', filename='assets/Icon-chat.png') }}" alt=""> </a> </li>
+        </ul>
+        <div class="logout">
+            <a href="{{ url_for('auth.logout') }}"> <img class="btn" src="{{ url_for('static', filename='assets/Icon-logout.png') }}" alt=""> </a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <section>
+            <form action={{ url_for('views.search') }} method='GET'> 
+                <button type="submit" class='job-finder-button'>Job Finder</button>
+            </form>
+        </section>
+
+        <section>
+            
+        </section>
+
+    </div>
+</body>
+
+</html>
