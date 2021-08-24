@@ -1,5 +1,6 @@
 import { Button, Grid } from "@material-ui/core"
 import { useState } from 'react'
+import "../styles/Navbar.scss"
 
 
 export default function Navbar(props) {
@@ -18,21 +19,25 @@ export default function Navbar(props) {
 
                 <Grid item container justifyContent= "center" direction="column" style={{flexGrow: 1}}>
 
-                    <Button style={Object.assign({background: "url('/assets/Icon-dashboard.png')"}, buttonStyle)}
+                    <Button className="dashboard-button" 
+                    style={Object.assign({background: "url('/assets/Icon-dashboard.png')"}, buttonStyle)}
                     onMouseEnter={() => setDashboardHover(true)} onMouseLeave={() => setDashboardHover(false)}/>
                     {isDashboardHover && (<div style={Object.assign({margin: "-5.25rem 0rem 0rem 4rem"}, hoverStyle)}> Dashboard </div>)}
 
-                    <Button style={Object.assign({background: "url('/assets/Icon-profile.png')"}, buttonStyle)}
+                    <Button className="profile-button" 
+                    style={Object.assign({background: "url('/assets/Icon-profile.png')"}, buttonStyle)}
                     onMouseEnter={() => setProfileHover(true)} onMouseLeave={() => setProfileHover(false)}/>
                     {isProfileHover && (<div style={Object.assign({margin: "0rem 0rem 0rem 4rem"}, hoverStyle)}> Profile </div>)}
 
-                    <Button style={Object.assign({background: "url('/assets/Icon-contact.png')"}, buttonStyle)}
+                    <Button className="contact-button" 
+                    style={Object.assign({background: "url('/assets/Icon-contact.png')"}, buttonStyle)}
                     onMouseEnter={() => setContactHover(true)} onMouseLeave={() => setContactHover(false)}/>
                     {isContactHover && (<div style={Object.assign({margin: "5.25rem 0rem 0rem 4rem"}, hoverStyle)}> Contact </div>)}
 
                 </Grid>
 
-                <Button style={Object.assign({background: "url('/assets/Icon-logout.png')"}, buttonStyle)}
+                <Button className="logout-button" 
+                style={Object.assign({background: "url('/assets/Icon-logout.png')"}, buttonStyle)}
                 onMouseEnter={() => setLogoutHover(true)} onMouseLeave={() => setLogoutHover(false)}/>
                 {isLogoutHover && (<div style={Object.assign({bottom: "0px", margin: "0rem 0rem 2rem 4rem"}, hoverStyle)}> Logout </div>)}
 
