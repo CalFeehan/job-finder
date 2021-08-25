@@ -1,0 +1,31 @@
+.dashboard-hover {
+  display: none;
+}
+
+.profile-hover {
+  display: none;
+}
+
+.contact-hover {
+  display: none;
+}
+
+.logout-hover {
+  display: none;
+}
+
+.dashboard-button:hover + .dashboard-hover {
+  display: block;
+}
+
+.profile-button:hover + .profile-hover {
+  display: block;
+}
+
+.contact-button:hover + .contact-hover {
+  display: block;
+}
+
+.logout-button:hover + .logout-hover {
+  display: block;
+}
