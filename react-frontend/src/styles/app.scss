@@ -1,0 +1,14 @@
+body,
+html,
+#root {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+@import "./_navbar.scss";
+@import "./_dashboard.scss";

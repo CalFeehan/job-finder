@@ -1,5 +1,5 @@
 import React from 'react'
-import './Dashboard.scss'
+import '../styles/app.scss'
 
 export default function Dashboard(props) {
     console.log(props)

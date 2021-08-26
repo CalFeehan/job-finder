@@ -1,11 +1,11 @@
 import { Button, Grid } from "@material-ui/core"
-import "./Navbar.scss"
+import "../styles/app.scss"
 
 
 export default function Navbar(props) {
 
     const buttonStyle = {width: "3.5rem", height: "3.5rem", minWidth: "unset", backgroundRepeat: "no-repeat", backgroundSize: "40%", backgroundPosition: "center", margin: "1rem 0rem 1rem 0rem"};
-    const hoverStyle = {position: "absolute", color: "#2F4067", fontWeight: "bold"};
+    const hoverStyle = {position: "fixed", color: "#2F4067", fontWeight: "bold"};
 
     return (
             <Grid container direction="column" style={{width: "3.5rem", background: "#2F4067"}} {...props}>

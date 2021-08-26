@@ -1,7 +1,8 @@
 import {Grid} from "@material-ui/core"
-import Navbar from "./components/Navbar/Navbar"
+import Navbar from "./components/Navbar"
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Dashboard from "./views/Dashboard/Dashboard";
+import Dashboard from "./views/Dashboard";
+import './styles/app.scss'
 
 function App() {
 
