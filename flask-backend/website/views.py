@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session
+from flask import Blueprint, render_template, request, redirect, session, jsonify
 from .combine_jobs import get_combined_jobs
 from .db import Job
 from .contact import send_email
@@ -31,7 +31,8 @@ def search():
     location = request.form['location']
 
     jobs = get_combined_jobs(job_title, location)
-    return render_template('search.html', jobs=jobs)
+    return jsonify(jobs)
+#    return render_template('search.html', jobs=jobs)
 
 
 @views.route('/contact', methods=['GET', 'POST'])
