@@ -10,6 +10,7 @@
 .homepage-container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
 }
 
@@ -17,111 +18,81 @@
   background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   color: white;
   scroll-snap-align: start;
+  overflow: hidden;
+  margin-bottom: -3%;
+  z-index: -1;
 }
 
 .homepage2 {
+  display: flex;
   background: white;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   color: black;
   scroll-snap-align: start;
+  z-index: 10;
 }
 
-.left-home {
-  min-width: 40vw;
+.header {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 100%;
+  max-height: 10%;
+  z-index: 10;
+}
+.logo {
+  display: flex;
+  min-width: 50%;
+  align-items: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.image {
+  padding-right: 1rem;
+}
+
+.btn {
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .forms-container {
-  margin-top: 16px;
-  text-align: right;
   color: #00b7ff;
-}
-.login-form {
-  padding: 8px;
-  color: #00b7ff;
-  background: white;
-}
-.login-form-container {
-  padding: 8px;
-  border-radius: 8px;
-  background: white;
+  padding: 5px;
+  z-index: 10;
 }
 
-.create-account-form {
-  padding: 8px;
-  color: #00b7ff;
-}
+.login-form-container,
 .create-account-form-container {
+  text-align: right;
+  margin-top: 5px;
   padding: 8px;
-  background: white;
   border-radius: 8px;
+  background: white;
+  max-width: 800px;
 }
 
-/* MULTIPAGE */
-
-.nav-bar {
-  background: #2f4067;
-}
-
-/* DASHBOARD */
-
-.logged-in-dashboard {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.nav-bar {
-  background: #2f4067;
-}
-
-.job-finder-button {
-  margin-top: 20%;
-  margin-left: 30%;
-  font-size: 32px;
-  letter-spacing: 3px;
-  background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
-  border-style: none;
-  color: white;
-  padding: 20px;
-  max-width: 40%;
-  min-width: 40%;
-  border-radius: 20px;
-}
-
-/* SEARCH */
-
-.job-card {
-  max-width: 70%;
-  min-width: 70%;
-  padding: 20px 5%;
-  border-bottom: solid;
-  border-color: rgb(161, 161, 161);
-  float: left;
-  flex: 80%;
-}
-
-.save-container {
-  min-width: 20%;
-  max-width: 20%;
-  flex: 20%;
-  float: right;
-  align-items: center;
-}
-
-.save-button {
-  min-width: 80%;
-  max-width: 80%;
-  font-size: 40;
-  font-weight: bolder;
-  color: white;
-  background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
-  padding: 20px 5%;
-  border-style: none;
-  border-radius: 12px;
+.page1 {
+  display: flex;
+  background: url(./assets/cropped-mirror.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  min-width: 100%;
+  min-height: 80%;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
 }

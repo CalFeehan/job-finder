@@ -11,50 +11,29 @@ def index():
     return render_template("index.html")
 
 
-@views.route('/dashboard')
-def dashboard():
-    if not session.get('user_id'):
-        return redirect('/')
-
-    return render_template("dashboard.html")
-
-
-@views.route('/search', methods=['GET', 'POST'])
+@views.post('/search')
 def search():
-    if not session.get('user_id'):
-        return redirect('/')
-
-    if request.method == 'GET':
-        return render_template("search.html")
-
-    job_title = request.form['job_title']
-    location = request.form['location']
-
+    data = request.get_json(silent=True)
+    job_title = data['job_title']
+    location = data['location']
     jobs = get_combined_jobs(job_title, location)
     return jsonify(jobs)
-#    return render_template('search.html', jobs=jobs)
 
 
-@views.route('/contact', methods=['GET', 'POST'])
+@views.post('/contact')
 def contact():
-    if not session.get('user_id'):
-        return redirect('/')
-
-    if request.method == 'GET':
-        return render_template("contact.html")
-
-    contact_name = request.form['contact-name']
-    contact_email = request.form['contact-email']
-    contact_company = request.form['contact-company']
-    contact_phone = request.form['contact-phone']
-    contact_interest = request.form['contact-interest']
-    contact_message = request.form['contact-message']
+    data = request.get_json(silent=True)
+    contact_name = data['contact-name']
+    contact_email = data['contact-email']
+    contact_company = data['contact-company']
+    contact_phone = data['contact-phone']
+    contact_interest = data['contact-interest']
+    contact_message = data['contact-message']
 
     if send_email(contact_name, contact_email, contact_company, contact_phone, contact_interest, contact_message):
-        # return jsonify({'success': 'login'})
-        pass
-    # return jsonify({'error': 'Email could not be sent'})
-    return redirect('/contact')
+        return jsonify({'success': 'login'})
+
+    return jsonify({'error': 'Email could not be sent'})
 
 
 @views.route('/profile')

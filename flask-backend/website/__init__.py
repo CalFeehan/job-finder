@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_session import Session
+from flask_cors import CORS
 from datetime import timedelta
 
 
@@ -13,6 +14,8 @@ def create_app():
     app.config['SECRET_KEY'] = 'changelater'
 
     Session(app)
+
+    CORS(app)
 
     from .views import views
     from .auth import auth

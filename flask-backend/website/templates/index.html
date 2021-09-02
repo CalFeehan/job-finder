@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
@@ -20,24 +18,22 @@
 
   <body>
     <div class="homepage-container">
-      <section class="homepage1">
-        <div class="left-home"> </div>
-        <div class="forms-container">
-          <div class="login-form-container">
-            <form class="login-form" id="login-form">
-              <label class="login-label">Login</label> <br/>
-              <label for="login-email">Email Address</label>
-              <input type="text" placeholder="Email Address" name="login-email" id="login-email" required />
-              <label for="login-password">Password</label>
-              <input type="password" placeholder="Password" name="login-password" id="login-password" required />
-              <button type="submit" class="start-search">LOGIN</button>
-            </form>
-            <div id="login-fail-alert" class="login-fail-alert" role="alert" style="display: none"></div>
+
+      <div class="homepage1">
+        <div class="header">
+          <div class="logo">
+            <div class="image"><img src="../static/assets/Logo.png"/></div>
+            <div ><h1>WEBTITLE</h1></div>
           </div>
-          <br/><br/>
-          <div class="create-account-form-container">
+          <button class=btn>ABOUT</button>
+          <button class=btn onclick="showHide('login-form-container')">LOGIN</button>
+          <button class=btn onclick="showHide('create-account-form-container')">CREATE</button> 
+        </div>
+        
+        <div class="forms-container">
+          
+          <div id="create-account-form-container" class="create-account-form-container" style="visibility: hidden">
             <form class="create-account-form" id="create-account-form">
-              <label class="create-account-label">Create Account</label><br />
               <label for="create-account-email">Email Address</label>
               <input type="text" placeholder="Email Address" name="create-account-email" id="create-account-email" autocomplete="off" required />
               <label for="create-account-password">Password</label>
@@ -48,14 +44,36 @@
             </form>
             <div id="create-account-fail-alert" class="create-account-fail-alert" role="alert" style="display: none"> </div>
           </div>
-        </div>
-      </section>
 
-      <section class="homepage2">
+          <div id="login-form-container" class=login-form-container style="visibility: hidden">
+            <form class="login-form" id="login-form">
+              <label for="login-email">Email Address</label>
+              <input type="text" placeholder="Email Address" name="login-email" id="login-email" required />
+              <label for="login-password">Password</label>
+              <input type="password" placeholder="Password" name="login-password" id="login-password" required />
+              <button type="submit" class="start-search">LOGIN</button>
+            </form>
+            <div id="login-fail-alert" class="login-fail-alert" role="alert" style="display: none"></div>
+          </div>
+        </div>
+        
+        <div class="page1"><p>HELLO</p></div>
+        <div></div>
+    
+      </div>
+
+      <div class="homepage2">
         <div>
           <h1>Page 2</h1>
         </div>
-      </section>
+      </div>
+
     </div>
+    
+  <script>let status = {'login-form-container': 'hidden', 'create-account-form-container': 'hidden'}</script>
+  <script>function showHide(i) {changeStatus(i);
+  document.getElementById(i).style.visibility=status[i]}</script>
+  <script>function changeStatus(i) {if(status[i] == 'visible'){status[i] = 'hidden'}else{status[i] = 'visible'}}</script>
+
   </body>
 </html>
