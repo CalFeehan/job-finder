@@ -1,24 +1,24 @@
-import {Grid} from "@material-ui/core"
+
+import { Route } from 'react-router-dom'
 import Navbar from "./components/Navbar"
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Dashboard from "./views/Dashboard";
 import Search from "./views/Search";
+import Applications from "./views/Applications"
 import './styles/app.scss'
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Grid container style={{height: "100%"}}>
-        <Grid item component={Navbar}/>
-        <Grid item  style={{flexGrow: 1, background: "#EAEAEA"}}>
-          <Switch>
+      <div className="screen" >
+        <div className="nav">
+          <Navbar />
+        </div>
+        <div className="component-container">
             <Route path="/search" component={(props) => <Search {...props} />} />
-            <Route path="/" component={(props) => <Dashboard {...props} />} />
-          </Switch>
-        </Grid>
-      </Grid>
-    </BrowserRouter>
+            <Route path="/applications" component={(props) => <Applications {...props} />} />
+            <Route exact path="/dashboard" component={(props) => <Dashboard {...props} />} />
+        </div>
+      </div>
   );
 }
 

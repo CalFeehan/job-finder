@@ -4,16 +4,12 @@ import '../styles/app.scss'
 export default function Dashboard(props) {
     console.log(props)
     return (
-        <div class="dashboard">
+        <div className="dashboard">
             <section>
-                <form method='GET'> 
-                    <button type="submit" class='job-finder-button'>Job Finder</button>
-                </form>
+                <button onClick={()=>props.history.push('/search')} className='job-finder-button'>Job Finder</button>
             </section>
             <section>
-                <form method='GET'> 
-                    <button type="submit" class='application-tracker-button'>Application Tracker</button>
-                </form>
+                <button onClick={()=>props.history.push('/applications')} className='application-tracker-button'>Application Tracker</button>
             </section>
         </div>
     )

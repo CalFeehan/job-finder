@@ -5,8 +5,6 @@
   font-family: "Red Hat Display", sans-serif;
 }
 
-/* HOMEPAGE */
-
 .homepage-container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;

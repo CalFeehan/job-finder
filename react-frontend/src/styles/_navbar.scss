@@ -1,31 +1,88 @@
-.dashboard-hover {
-  display: none;
+.dashboard-button {
+  transition: 0.2s ease;
+  background: url("../assets/Icon-dashboard.png");
+}
+.profile-button {
+  transition: 0.2s ease;
+  background: url("../assets/Icon-profile.png");
+}
+.contact-button {
+  transition: 0.2s ease;
+  background: url("../assets/Icon-contact.png");
+}
+.logout-button {
+  transition: 0.2s ease;
+  background: url("../assets/Icon-logout.png");
+}
+.logo {
+  background: url("../assets/Logo.png");
+  width: 5rem;
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center;
+  margin: 1rem 0rem 1rem 0rem;
+  border: none;
+}
+.dashboard-button,
+.profile-button,
+.contact-button,
+.logout-button {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center;
+  border: none;
 }
 
-.profile-hover {
-  display: none;
+.navbar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
-.contact-hover {
-  display: none;
+.nav-buttons {
+  flex-grow: 0.2;
+  display: flex;
+  flex-direction: column;
 }
-
-.logout-hover {
-  display: none;
+.logo,
+.logout-button {
+  margin: auto !important;
 }
-
-.dashboard-button:hover + .dashboard-hover {
-  display: block;
+.dashboard-button:active {
+  background: #1a243a;
+  background-image: url("../assets/Icon-dashboard.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+  transition: 0.1s ease;
 }
-
-.profile-button:hover + .profile-hover {
-  display: block;
+.profile-button:active {
+  background: #1a243a;
+  background-image: url("../assets/Icon-profile.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+  transition: 0.1s ease;
 }
-
-.contact-button:hover + .contact-hover {
-  display: block;
+.contact-button:active {
+  background: #1a243a;
+  background-image: url("../assets/Icon-contact.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+  transition: 0.1s ease;
 }
-
-.logout-button:hover + .logout-hover {
-  display: block;
+.logout-button:active {
+  background: #1a243a;
+  background-image: url("../assets/Icon-logout.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+  z-index: 0;
 }

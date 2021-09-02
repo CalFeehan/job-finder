@@ -19,38 +19,39 @@ Following this I will create an application tracker, showing saved jobs and thei
 
 ```
 .
-├── flask-backend 
-│   ├── flask_session           # Server-side sessions    
-│   ├── venv                    # Virtual environment 
+├── flask-backend
+│   ├── flask_session           # Server-side sessions
+│   ├── venv                    # Virtual environment
 │   ├── website                 # Flask files
 │   │   ├── static              # Assets and base CSS/Js
-│   │   │   ├── assets          # Images folder   
-│   │   │   ├── app.js          # Js main   
-│   │   │   ├── form.js         # Form functionaltiy JQuery   
-│   │   │   └── sytles.css      # CSS main    
+│   │   │   ├── assets          # Images folder
+│   │   │   ├── app.js          # Js main
+│   │   │   ├── form.js         # Form functionaltiy JQuery
+│   │   │   └── sytles.css      # CSS main
 │   │   ├── templates           # HTML templates
-│   │   ├── __init__.py         # Initialise Flask/tools   
-│   │   ├── auth.py             # Authentication handler   
+│   │   ├── __init__.py         # Initialise Flask/tools
+│   │   ├── auth.py             # Authentication handler
 │   │   ├── combines_jobs.py    # Scraper combine tool
 │   │   ├── contact.py          # Email functionality
-│   │   ├── db.py               # Database & queries 
-│   │   ├── indeed_scraper.py   # Job scraper 1 
+│   │   ├── db.py               # Database & queries
+│   │   ├── indeed_scraper.py   # Job scraper 1
 │   │   ├── reed_scraper.py     # Job scraper 2
 │   │   └── views.py            # Routing
 │   ├── test                    # Automated tests - in progress
-│   ├── app.py            
-│   ├── Procfile                # For Heroku deployment  
-│   └── requirements.txt          
-├── react-frontend              
+│   ├── app.py
+│   ├── Procfile                # For Heroku deployment
+│   └── requirements.txt
+├── react-frontend
 │   ├── node modules            # Node files
 │   ├── public                  # Public files
-│   ├── src                     # Source files 
+│   ├── src                     # Source files
+│   │    ├ assets               # Image files
 │   │    ├ components           # Component files
 │   │    ├ styles               # Scss files
 │   │    ├ views                # Views (components)
 │   │    ├ App.js               # Main app
-│   │    ├ index.js             
-│   │    └ reportWebVitals.js   
+│   │    ├ index.js
+│   │    └ reportWebVitals.js
 │   ├── test                    # Automated tests - in progress
 │   ├── package-lock.json
 │   └── package.json

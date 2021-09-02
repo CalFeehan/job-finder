@@ -9,6 +9,26 @@ html,
   height: 100%;
   width: 100%;
 }
+.screen {
+  height: 100%;
+  flex-wrap: unset;
+  display: flex;
+}
+
+.nav {
+  width: 5rem;
+  min-height: 100%;
+  background: #2f4067;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.component-container {
+  flex-grow: 1;
+  background: #eaeaea;
+  overflow-y: scroll;
+}
 
 @import "./navbar.scss";
 @import "./dashboard.scss";
