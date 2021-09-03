@@ -1,0 +1,25 @@
+.job-container {
+  padding: 20px 0px 10px 40px !important;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.job-card {
+}
+.save-container {
+  align-self: center;
+  padding: 20px;
+}
+
+.save-button {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+  justify-self: center !important;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
+}

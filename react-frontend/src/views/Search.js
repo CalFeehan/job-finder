@@ -11,13 +11,18 @@ export default function Search() {
     const search = () => axios.post("http://localhost:5000/search", {job_title: jobTitle, location: location}).then((result) => setJobResults(result.data))
 
     return (
-        <div>
-            <input onChange={(event) => setJobTitle(event.target.value)} type="text" placeholder="Job Title" name="job_title"/>
-            <input onChange={(event) => setLocation(event.target.value)} type="text" placeholder="Location" name="location"/>
-            <button type="submit" value="Search" onClick={search}>Search</button>
-            {jobResults.map((job) => 
-            <JobCard job={job} />
+        <div className="job-finder">
+            <div className="search-container">
+                <input className="input-box" onChange={(event) => setJobTitle(event.target.value)} type="text" placeholder="Job Title" name="job_title"/>
+                <input className="input-box" onChange={(event) => setLocation(event.target.value)} type="text" placeholder="Location" name="location"/>
+                <button className="search-button" type="submit" value="Search" onClick={search}>Search</button>
+            </div>
 
+            {jobResults.map((job) => 
+
+            <div >
+                <JobCard job={job} className="job-info"/>
+            </div>
             )}
         </div>
     
