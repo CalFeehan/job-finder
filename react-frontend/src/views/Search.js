@@ -15,7 +15,7 @@ export default function Search() {
             <div className="search-container">
                 <input className="input-box" onChange={(event) => setJobTitle(event.target.value)} type="text" placeholder="Job Title" name="job_title"/>
                 <input className="input-box" onChange={(event) => setLocation(event.target.value)} type="text" placeholder="Location" name="location"/>
-                <button className="search-button" type="submit" value="Search" onClick={search}>Search</button>
+                <button className="search-button" type="submit" value="Search" onClick={search}></button>
             </div>
 
             {jobResults.map((job) => 

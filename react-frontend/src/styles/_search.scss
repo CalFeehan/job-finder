@@ -8,7 +8,10 @@
 
 .input-box {
   margin: 10px 0px 10px 15px;
+  padding: 0px 10px 0px 10px;
   font-size: 1rem;
+  font-weight: 700;
+  color: #3d63e2;
   min-height: 40px;
   min-width: 300px;
   border: none;
@@ -16,10 +19,16 @@
 }
 
 .search-button {
-  padding: 10px;
+  cursor: pointer;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 15px;
   margin: 10px 0px 10px 15px;
   border: none;
   border-radius: 5px;
+  background: url("../assets/Logo-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .job-card {
   width: 100%;
