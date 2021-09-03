@@ -1,5 +1,5 @@
 .job-container {
-  padding: 20px 0px 10px 40px !important;
+  margin: 10px 20px 10px 15px;
   display: flex;
   flex-direction: row;
   width: 90%;
@@ -8,8 +8,6 @@
   line-height: 1.5rem;
 }
 
-.job-card {
-}
 .save-container {
   align-self: center;
   padding: 20px;
@@ -24,4 +22,11 @@
   border: none;
   color: white;
   background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
+}
+
+@media screen and (max-width: 768px) {
+  .job-container {
+    flex-direction: column !important;
+    display: block;
+  }
 }
