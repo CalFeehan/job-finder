@@ -6,7 +6,7 @@
   border-radius: 15px;
 }
 
-.input-box {
+.input-search {
   margin: 10px 0px 10px 15px;
   padding: 0px 10px 0px 10px;
   font-size: 1rem;
@@ -16,6 +16,7 @@
   min-width: 300px;
   border: none;
   border-radius: 5px;
+  box-shadow: 10px 15px 20px -10px black;
 }
 
 .search-button {
@@ -35,13 +36,28 @@
   border: solid #009bd8 2px;
   border-radius: 20px;
   padding: 20px;
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 768px) {
   .job-card {
-    max-width: 60vw;
+    max-width: 100%;
+    margin-left: 5px;
   }
   .input-box {
     min-width: 0px !important;
   }
+}
+
+::placeholder {
+  color: #3d63e2;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  // Internet Explorer
+  color: #3d63e2;
+}
+::-ms-input-placeholder {
+  // Microsoft Edge
+  color: #3d63e2;
 }

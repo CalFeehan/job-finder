@@ -13,8 +13,8 @@ export default function Search() {
     return (
         <div className="job-finder">
             <div className="search-container">
-                <input className="input-box" onChange={(event) => setJobTitle(event.target.value)} type="text" placeholder="Job Title" name="job_title"/>
-                <input className="input-box" onChange={(event) => setLocation(event.target.value)} type="text" placeholder="Location" name="location"/>
+                <input className="input-search" onChange={(event) => setJobTitle(event.target.value)} type="text" placeholder="Job Title" name="job_title"/>
+                <input className="input-search" onChange={(event) => setLocation(event.target.value)} type="text" placeholder="Location" name="location"/>
                 <button className="search-button" type="submit" value="Search" onClick={search}></button>
             </div>
 
