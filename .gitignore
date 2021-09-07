@@ -1,4 +1,4 @@
-./flask-backend/flask_session
+/flask-backend/flask_session
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
