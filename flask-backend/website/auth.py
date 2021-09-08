@@ -1,6 +1,10 @@
-from flask import Blueprint, request, jsonify, session, redirect
+from flask import Blueprint, json, request, jsonify, session, redirect
 import re
 import bcrypt
+from functools import wraps
+import jwt
+import datetime
+import uuid
 from .db import User
 
 
@@ -32,6 +36,28 @@ def verify_password(password: str, stored_hash_str: str) -> bool:
     return False
 
 
+def token_required(f):
+    @wraps(f)
+    def decorator(*args, **kwargs):
+        token = None
+
+        if 'x-access-tokens' in request.headers:
+            token = request.headers['x-access-tokens']
+
+        if not token:
+            return jsonify({'message': 'a valid token is missing'})
+
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'])
+            current_user = User.query.filter_by(
+                public_id=data['public_id']).first()
+        except:
+            return jsonify({'message': 'token is invalid'})
+
+        return f(current_user, *args, **kwargs)
+    return decorator
+
+
 auth = Blueprint('auth', __name__)
 
 
@@ -46,8 +72,9 @@ def login():
         stored_password = User.get_stored_password(email)
         # checks if input password matches stored password, if correct returns success, else returns error
         if verify_password(password, stored_password):
-            session['user_id'] = User.get_user_id(email)
-            return jsonify({'success': 'login'})
+            token = jwt.encode({'public_id': User.public_id, 'exp': datetime.datetime.utcnow(
+            ) + datetime.timedelta(minutes=30)}, app.config['SECRET_KEY'])
+            return jsonify({'token': token.decode('UTF-8')})
 
     return jsonify({'error': 'Incorrect Username or Password'})
 
@@ -73,7 +100,7 @@ def create_account():
         return jsonify({'error': 'Email already in use'})
     else:
         # Creates user, starts session
-        User.add_user(email, create_bcrypt_hash(password))
+        User.add_user(str(uuid.uuid4()), email, create_bcrypt_hash(password))
         session['user_id'] = User.get_user_id(email)
         return jsonify({'success': 'login'})
 

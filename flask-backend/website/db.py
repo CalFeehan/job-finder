@@ -43,6 +43,7 @@ class User:
         execute_query(
             '''CREATE TABLE users(
                 id int AUTO_INCREMENT PRIMARY KEY,
+                public_id int,
                 email varchar(255),
                 password varchar(255),
                 date_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -71,15 +72,15 @@ class User:
         return execute_query_with_return('SELECT password FROM users WHERE email=%s', (email, ))[0][0]
 
     @staticmethod
-    def add_user(email, password):
+    def add_user(public_id, email, password):
         if not execute_query_with_return(
             ''' SELECT id FROM users WHERE email=%s''', (email,)
         ):
             execute_query(
                 '''INSERT INTO users(
-                    email, password)
-                    VALUES(%s, %s)
-                ''', (email, password)
+                    public_id, email, password)
+                    VALUES(%s, %s, %s)
+                ''', (public_id, email, password)
             )
             return True
         return False
