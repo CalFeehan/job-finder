@@ -14,7 +14,7 @@
   display: flex;
   height: 70%;
   width: 80%;
-  box-shadow: 10px 15px 20px -10px black;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3), 0px 0px 50px rgba(0, 0, 0, 0.3);
 }
 
 .info-container-left {
@@ -82,7 +82,7 @@
   min-height: 40px;
   border: none;
   border-radius: 5px;
-  box-shadow: 10px 15px 20px -10px black;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3), 0px 0px 50px rgba(0, 0, 0, 0.3);
 }
 
 .large-input-box {
