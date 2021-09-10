@@ -37,6 +37,7 @@
 }
 
 .input-container-right {
+  margin-right: 25px;
   justify-content: flex-end;
   min-width: 0px;
   min-height: 0;
@@ -49,7 +50,6 @@
   display: flex;
   width: 100%;
   height: 20%;
-  z-index: 1;
 }
 .small-input-container-left,
 .small-input-container-right {
@@ -59,17 +59,11 @@
   width: 50%;
   height: 75%;
 }
-.small-input-container-left {
-  padding-left: 20px;
-}
-.small-input-container-right {
-  padding-right: 20px;
-}
+
 .large-input-container-full {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 0px 20px;
   width: 100%;
   height: 40%;
 
@@ -81,7 +75,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-right: 15px;
   color: #3d63e2;
   width: 100%;
   height: 20%;
@@ -105,7 +98,7 @@
 .large-input-contact {
   min-height: 0px;
   border: 1.5px solid #3d63e2;
-  margin: 20px 0px 0px 15px;
+  margin: 25px 0px 0px 15px;
   padding: 10px;
   font-size: 1rem;
   font-weight: 700;
