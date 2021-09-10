@@ -5,12 +5,18 @@ export default function Dashboard(props) {
     console.log(props)
     return (
         <div className="dashboard">
-            <div className="job-finder-container">
-                <button onClick={()=>props.history.push('/search')} className='job-finder-button'>Job Finder</button>
-            </div>
-            <div className="application-tracker-container">
-                <button onClick={()=>props.history.push('/applications')} className='application-tracker-button'>Application Tracker</button>
-            </div>
+            <button className="job-finder-button" onClick={()=>props.history.push('/search')}>
+                <div className='job-finder-text'>
+                    Job Finder
+                </div>
+                <button className="dashboard-logos" />
+            </button>
+            <button className="application-tracker-button" onClick={()=>props.history.push('/applications')}>
+                <div className='application-tracker-text'>
+                    Application Tracker
+                </div>
+                <button className="dashboard-logos" />
+            </button>
         </div>
     )
 }
