@@ -1,5 +1,7 @@
 # Job Finder
 
+** This project was initially completed using only Flask. I'm currently removing / adapting all of the content to allow React to serve up the frontend, and Flask just being used as a RestAPI. **
+
 This project served as an introduction to building a full stack, multi page web app, using Flask for the backend functionality, and React for the frontend, connected via a REST API.
 
 Initial functionality includes create account / login / logout with regex validation and bcrypt encryption (handles salt/hash and stores salt in hash for security). Flask Session for encrypted server-side sessions. Navbar for navigation. Account management including changing passwords and deleting account from db. Contact form using smtplib. Job search by title and location using BeautifulSoup, returns results from multiple websites, combined. Ability to save/unsave jobs to db.
