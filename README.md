@@ -1,6 +1,6 @@
 # Job Finder
 
-** This project was initially completed using only Flask. I'm currently removing / adapting all of the content to allow React to serve up the frontend, and Flask just being used as a RestAPI. **
+** This project was initially completed using only Flask. I'm currently removing / adapting all of the content to allow React to serve up the frontend, and Flask just being used as a RestAPI. To view this as it stands, cd into flask-backend and activate venv, run app.py. Open another terminal, cd into react-frontend and npm start. Note MySQL hosting website is currently down - I am in the process of migrating the database to another web hosting provider so Flask login/create account functionality will not work **
 
 This project served as an introduction to building a full stack, multi page web app, using Flask for the backend functionality, and React for the frontend, connected via a REST API.
 
