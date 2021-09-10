@@ -14,24 +14,23 @@ export default function Contact() {
         <div className="contact-page">
             <div className="contact-container">
                 <div className="info-container-left">
-                    <h1>Want to know more?</h1>
-                    <br/>
-                    <h2>Feel free to drop me a message and I’ll do my best to get back to you as soon as possible.</h2>
+                    <h1>Get in touch!</h1>
+                    <h2>I’ll do my best to get back to you as soon as possible.</h2>
                 </div>
                 <div className="input-container-right">
                     <div className="small-input-container-full">
                         <div className="small-input-container-left">
-                            <input className="input-contact" onChange={(event) => setName(event.target.value)} type="text" placeholder="Your Name" name="name"/>
+                            <input className="input-contact" onChange={(event) => setName(event.target.value)} type="text" placeholder="Name" name="name"/>
                             <input className="input-contact" onChange={(event) => setCompany(event.target.value)} type="text" placeholder="Company" name="company"/>
                         </div>
                         <div className="small-input-container-right">
-                            <input className="input-contact" onChange={(event) => setEmail(event.target.value)} type="text" placeholder="Your Email" name="email"/>
-                            <input className="input-contact" onChange={(event) => setPhone(event.target.value)} type="text" placeholder="Your Phone" name="phone"/>
+                            <input className="input-contact" onChange={(event) => setEmail(event.target.value)} type="text" placeholder="Email" name="email"/>
+                            <input className="input-contact" onChange={(event) => setPhone(event.target.value)} type="text" placeholder="Phone" name="phone"/>
                         </div>
                     </div>
                     <div className="large-input-container-full">
-                        <input className="input-contact" onChange={(event) => setInterestedIn(event.target.value)} type="text" placeholder="Interest In" name="interest"/>
-                        <input className="large-input-contact" onChange={(event) => setMessage(event.target.value)} type="text" placeholder="Message" name="message"/>
+                        <input className="input-contact" onChange={(event) => setInterestedIn(event.target.value)} type="select" placeholder="Interested In" name="interest"/>
+                        <textarea className="large-input-contact" onChange={(event) => setMessage(event.target.value)} placeholder="Message" name="message" rows="5" cols="50"/>
 
                     </div>
                     <div className="send-container">
