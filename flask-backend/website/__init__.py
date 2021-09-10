@@ -12,10 +12,11 @@ def create_app():
     app.config['SESSION_FILE_THRESHOLD'] = 50
 
     app.config['SECRET_KEY'] = 'changelater'
+    app.config["supports_credentials"] = True
 
     Session(app)
-
     CORS(app)
+ #   CORS(app, resources={r"/*": {"origins": "*"}})
 
     from .views import views
     from .auth import auth

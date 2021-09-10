@@ -19,11 +19,15 @@ def send_email(contact_name: str, contact_email: str, contact_company: str, cont
     """
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.ehlo()
         server.starttls()
+        print(os.getenv('GOOGLE_USER'))
+        print(os.getenv('GOOGLE_PASS'))
         server.login(os.getenv('GOOGLE_USER'), os.getenv('GOOGLE_PASS'))
         server.sendmail(os.getenv('GOOGLE_USER'),
                         "feehan07@hotmail.co.uk", message)
         server.quit()
         return True
-    except:
+    except Exception as e:
+        print(e)
         return False

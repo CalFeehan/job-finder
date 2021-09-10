@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/app.scss'
+import axios from 'axios';
 
 export default function Contact() {
 
@@ -9,6 +10,10 @@ export default function Contact() {
     const [phone, setPhone] = useState("")
     const [interestedIn, setInterestedIn] = useState("")
     const [message, setMessage] = useState("")
+    const [contactResult, setContactResult] = useState([])
+
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    const contact = () => axios.post("http://localhost:5000/contact", {name: name, email: email, company: company, phone: phone, interestedIn: interestedIn, message: message }).then((result) => setContactResult(result.data))
 
     return (
         <div className="contact-page">
@@ -34,9 +39,14 @@ export default function Contact() {
 
                     </div>
                     <div className="send-container">
-                        <button className="send-button"></button>
+                        <button className="send-button" onClick={contact}></button>
                         <p>Send</p>
                     </div>
+                    <p className="message-sent-alert-success">
+                    {contactResult['success']}</p>
+                    <p className="message-sent-alert-fail">
+                    {contactResult['error']}</p>
+                    
 
                 </div>
             </div>

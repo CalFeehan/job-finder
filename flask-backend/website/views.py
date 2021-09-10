@@ -2,6 +2,8 @@ from flask import Blueprint, render_template, request, redirect, session, jsonif
 from .combine_jobs import get_combined_jobs
 from .db import Job
 from .contact import send_email
+import json
+
 
 views = Blueprint('views', __name__)
 
@@ -23,17 +25,17 @@ def search():
 @views.post('/contact')
 def contact():
     data = request.get_json(silent=True)
-    contact_name = data['contact-name']
-    contact_email = data['contact-email']
-    contact_company = data['contact-company']
-    contact_phone = data['contact-phone']
-    contact_interest = data['contact-interest']
-    contact_message = data['contact-message']
+    contact_name = data['name']
+    contact_email = data['email']
+    contact_company = data['company']
+    contact_phone = data['phone']
+    contact_interest = data['interestedIn']
+    contact_message = data['message']
 
     if send_email(contact_name, contact_email, contact_company, contact_phone, contact_interest, contact_message):
-        return jsonify({'success': 'login'})
+        return jsonify({'success': 'Message sent'})
 
-    return jsonify({'error': 'Email could not be sent'})
+    return jsonify({'error': 'Message could not be sent'})
 
 
 @views.route('/profile')

@@ -69,8 +69,21 @@
 
   textarea {
     resize: none;
+    font-family: inherit;
   }
 }
+.input-contact,
+.large-input-contact {
+  min-height: 0px;
+  border: 1.5px solid #3d63e2;
+  margin: 25px 0px 0px 15px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3d63e2;
+  border-radius: 5px;
+}
+
 .send-container {
   display: flex;
   flex-direction: column;
@@ -93,17 +106,17 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-
-.input-contact,
-.large-input-contact {
-  min-height: 0px;
-  border: 1.5px solid #3d63e2;
-  margin: 25px 0px 0px 15px;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #3d63e2;
-  border-radius: 5px;
+.message-sent-alert-success {
+  display: flex;
+  align-self: flex-end;
+  color: rgb(0, 180, 0);
+  font-weight: bold;
+}
+.message-sent-alert-fail {
+  display: flex;
+  align-self: flex-end;
+  color: rgb(180, 0, 0);
+  font-weight: bold;
 }
 
 ::placeholder {
