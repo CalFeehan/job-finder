@@ -1,0 +1,61 @@
+.profile-page {
+  background-image: linear-gradient(315deg, #00d3d8, #3d63e2, #3523b6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-container {
+  min-width: 400px;
+  margin-left: 50px;
+  background: white;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  width: 40%;
+  min-height: 650px;
+  align-items: center;
+}
+
+.input-profile {
+  min-height: 0px;
+  border: 1.5px solid #3d63e2;
+  margin: 25px 0px 0px 15px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3d63e2;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.header {
+  margin-top: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.submit-button {
+  cursor: pointer;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 15px;
+  margin: 10px 0px 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: url("../assets/Logo-filled-blue.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.password-container {
+  padding: 25px 15px 0px 25px;
+}
+
+.delete-container {
+  padding: 25px 15px 0px 25px;
+  width: 100%;
+}
