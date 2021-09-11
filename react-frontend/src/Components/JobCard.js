@@ -3,12 +3,14 @@ import axios from 'axios';
 
 export default function JobCard({job}) {
 
+    const changeSaveButton = () => {document.querySelector(".save-button").innerText = jobSaved[0];}
+
     const [title, setTitle] = useState("")
     const [company, setCompany] = useState("")
     const [location, setLocation] = useState("")
     const [salary, setSalary] = useState("")
     const [summary, setSummary] = useState("")
-    const [jobResult, setJobResult] = useState([])
+    const [jobSaved, setJobSaved] = useState([])
 
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     const save = () => {
@@ -17,7 +19,10 @@ export default function JobCard({job}) {
         setLocation(job['location']);
         setSalary(job['salary']);
         setSummary(job['summary']);
-        axios.post("http://localhost:5000/save-job", {title: title, company: company, location: location, salary: salary, summary: summary}).then((result) => setJobResult(result.data))}
+        
+        axios.post("http://localhost:5000/save-job", {title: title, company: company, location: location, salary: salary, summary: summary}).then((result) => {setJobSaved(result.data)});
+        changeSaveButton();    
+    }
 
     return (
         <div className="job-container">

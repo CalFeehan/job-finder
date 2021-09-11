@@ -106,7 +106,8 @@ class Job:
     def init_job_table():
         execute_query(
             '''CREATE TABLE jobs(
-                id int PRIMARY KEY,
+                job_id int AUTO_INCREMENT PRIMARY KEY,
+                id int,
                 job_title varchar(255), 
                 company varchar(255),
                 location varchar(255),

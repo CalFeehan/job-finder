@@ -19,6 +19,7 @@ def search():
     job_title = data['job_title']
     location = data['location']
     jobs = get_combined_jobs(job_title, location)
+    print(jobs)
     return jsonify(jobs)
 
 
@@ -50,9 +51,30 @@ def save_job():
         'salary': data['salary'],
         'summary': data['summary']
     }
+    print(job)
     # Tries to save job
     if Job.save_job(session['user_id'], job):
-        return jsonify({'success': 'saved'})
+        return jsonify({'saved': 'saved'})
     # If job already saves, deletes job
     Job.delete_job(session['user_id'], job)
-    return jsonify({'success': 'deleted'})
+    return jsonify({'deleted': 'deleted'})
+
+
+@views.get('/get-jobs')
+def get_jobs():
+    session['user_id'] = 1
+    for i in Job.get_saved_jobs(session['user_id']):
+        data = {
+            'job title': i[2],
+            'company': i[3],
+            'location': i[4],
+            'salary': i[5],
+            'summary': i[6],
+            'closing date': i[7],
+            'application date': i[8],
+            'notes': i[9],
+            'job link': i[10],
+            'company link': i[11],
+        }
+    print(data)
+    return str(data)
