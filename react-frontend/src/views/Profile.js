@@ -9,7 +9,7 @@ export default function Profile() {
                 <div className="profile-page">
                     <div className="profile-container">
                         <div className="password-container">
-                            <div className="header">Password Change: </div>
+                            <div className="header">Change Password: </div>
                             <input className="input-profile" type="text" placeholder="Current Password" name="current-password"/>
                             <input className="input-profile" type="text" placeholder="New Password" name="new-password"/>
                             <input className="input-profile" type="text" placeholder="Confirm New Password" name="confirm-password"/>
