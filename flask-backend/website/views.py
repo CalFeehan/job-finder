@@ -38,29 +38,21 @@ def contact():
     return jsonify({'error': 'Message could not be sent'})
 
 
-@views.route('/profile')
-def profile():
-    if not session.get('user_id'):
-        return redirect('/')
-
-    return render_template("profile.html")
-
-
 @views.post('/save-job')
 def save_job():
-    if not session.get('user_id'):
-        return redirect('/')
-
+    #   being used temporarily, storing all jobs against my user.
+    session['user_id'] = 1
+    data = request.get_json(silent=True)
     job = {
-        'job_title': request.form['job-title'],
-        'company': request.form['company'],
-        'location': request.form['location'],
-        'salary': request.form['salary'],
-        'summary': request.form['summary']
+        'job_title': data['title'],
+        'company': data['company'],
+        'location': data['location'],
+        'salary': data['salary'],
+        'summary': data['summary']
     }
     # Tries to save job
     if Job.save_job(session['user_id'], job):
-        return "Job Saved"
+        return jsonify({'success': 'saved'})
     # If job already saves, deletes job
     Job.delete_job(session['user_id'], job)
-    return "Job Deleted"
+    return jsonify({'success': 'deleted'})
