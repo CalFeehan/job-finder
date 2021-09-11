@@ -75,7 +75,6 @@ def login():
             token = jwt.encode({'public_id': User.public_id, 'exp': datetime.datetime.utcnow(
             ) + datetime.timedelta(minutes=30)}, app.config['SECRET_KEY'])
             return jsonify({'token': token.decode('UTF-8')})
-
     return jsonify({'error': 'Incorrect Username or Password'})
 
 

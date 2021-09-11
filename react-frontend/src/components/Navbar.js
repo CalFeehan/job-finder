@@ -23,7 +23,7 @@ export default function Navbar(props) {
 
                 </div>
 
-                <button className="logout-button" />
+                <button onClick={() => window.location.replace('http://localhost:5000/')} className="logout-button" />
 
             </div>
             

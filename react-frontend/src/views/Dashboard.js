@@ -9,13 +9,13 @@ export default function Dashboard(props) {
                 <div className='job-finder-text'>
                     Job Finder
                 </div>
-                <button className="dashboard-logos" />
+                <div className="dashboard-logos" />
             </button>
             <button className="application-tracker-button" onClick={()=>props.history.push('/applications')}>
                 <div className='application-tracker-text'>
                     Application Tracker
                 </div>
-                <button className="dashboard-logos" />
+                <div className="dashboard-logos" />
             </button>
         </div>
     )
