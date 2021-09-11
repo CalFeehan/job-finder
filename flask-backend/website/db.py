@@ -1,9 +1,10 @@
 import mysql.connector
+import os
 
-HOST = 'remotemysql.com'
-USER = 'Hsms6UW1Df'
-PASSWORD = 'BEuSfixIzh'
-DATABASE = 'Hsms6UW1Df'
+HOST = 'sql496.main-hosting.eu'
+USER = 'u497621354_callum'
+PASSWORD = os.getenv('JOBFINDER_DB_PASS')
+DATABASE = 'u497621354_jobfinder'
 PORT = '3306'
 
 
