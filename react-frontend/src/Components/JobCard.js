@@ -21,7 +21,7 @@ export default function JobCard({job}) {
         setSummary(job['summary']);
         
         axios.post("http://localhost:5000/save-job", {title: title, company: company, location: location, salary: salary, summary: summary}).then((result) => {setJobSaved(result.data)});
-        changeSaveButton();    
+        //changeSaveButton();    
     }
 
     return (

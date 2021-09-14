@@ -37,6 +37,7 @@ def verify_password(password: str, stored_hash_str: str) -> bool:
 
 
 def token_required(f):
+    '''this decorator will be used to check the token sent by React'''
     @wraps(f)
     def decorator(*args, **kwargs):
         token = None

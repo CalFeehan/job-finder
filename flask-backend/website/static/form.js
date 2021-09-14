@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
 	$('#login-form').on('submit', function(event) {
-
 		$.ajax({
-
 			data : {
 				login_email : $('#login-email').val(),
 				login_password : $('#login-password').val()
@@ -18,8 +16,7 @@ $(document).ready(function() {
 			}
 			else {
 				window.location.replace('/dashboard');
-			}
-            
+			}  
 		});
 
 		event.preventDefault();
